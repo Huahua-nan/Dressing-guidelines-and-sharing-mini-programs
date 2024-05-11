@@ -1,0 +1,62 @@
+.container{
+  width: 100%;
+  margin: 0 auto;
+  height: 1200rpx;
+  display: flex;
+  background-color: #e9e9e9;
+  justify-content: space-around;
+}
+
+.title{
+  width: 90%;
+  height: 0rpx;
+  margin-top: -150rpx;
+}
+.titletextarea{
+  border-radius: 20rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+}
+.square{
+  width: 90%;
+  height: 400rpx;
+  margin-top: -220rpx;
+}
+.squaretextarea{
+  border-radius: 20rpx;
+  justify-content: start;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.button{
+  display: flex;
+  justify-content: space-around;
+  margin-top: -250rpx;
+  margin-bottom: -150rpx;
+}
+
+.currentWordNumber{
+  margin-top: 100rpx;
+}
+.picture_view {
+  display: flex;
+  flex-wrap: wrap;
+  
+  margin-top: -300rpx;
+  margin-bottom: -50rpx;
+}
+.default-image {
+  width: 160rpx;
+  height: 160rpx;
+  border: 1rpx solid silver;
+  margin-right: 10rpx; /* 默认图片和其他图片之间的间距 */
+}
+
+.image-item {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 10rpx; /* 图片之间的间距 */
+}

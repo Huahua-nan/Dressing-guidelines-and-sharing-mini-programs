@@ -1,0 +1,40 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view class="container">
+  <view class="block" style="margin-top: 50rpx;">
+    <text>姓名:</text>
+    <textarea class="input" bindinput="Getname" style="margin-top: 5rpx;" value="{{UserInfo.name}}"></textarea>
+  </view>
+  <view class="block" style="margin-top: 20rpx;">
+    <text>年龄:</text>
+    <textarea class="input" bindinput="Getage" style="margin-top: 5rpx;" value="{{UserInfo.age}}"></textarea>
+  </view> 
+  <view class="block" style="margin-top: 20rpx;">
+    <text>邮箱:</text>
+    <textarea class="input" bindinput="Getemail" style="margin-top: 5rpx;" value="{{UserInfo.mail}}"></textarea>
+  </view> 
+  <!-- <view class="block" style="margin-top: 20rpx;">
+    <text>头像:</text>
+    <textarea class="input" bindinput="Getavatar" style="margin-top: 5rpx;" value="{{UserInfo.avatar}}"></textarea>
+  </view>  -->
+  <view class="block" style="margin-top: 20rpx;">
+    <text>联系方式:</text>
+    <textarea class="input" bindinput="Getnumber" style="margin-top: 5rpx;" value="{{UserInfo.phonenumber}}"></textarea>
+  </view> 
+  <view class="block" style="margin-top: 20rpx;">
+    <text>性别:</text>
+    <textarea class="input" bindinput="Getsex" style="margin-top: 5rpx;" value="{{UserInfo.gender}}"></textarea>
+  </view> 
+  <view class="block" style="margin-top: 20rpx;">
+    <text>身高(cm):</text>
+    <textarea class="input" bindinput="Getheight" style="margin-top: 5rpx;" value="{{UserInfo.height}}"></textarea>
+  </view> 
+  <view class="block" style="margin-top: 20rpx;">
+    <text>体重(kg):</text>
+    <textarea class="input" bindinput="Getweight" style="margin-top: 5rpx;" value="{{UserInfo.weight}}"></textarea>
+  </view> 
+
+  <view class="button">
+    <button class="submit" style="width: 280rpx; margin-top: 60rpx;margin-right: 20rpx;" bind:tap="save">保存</button>
+    <button class="cancel" style="width: 280rpx; margin-top: 60rpx;" bind:tap="cancel">取消</button>
+  </view>
+</view>

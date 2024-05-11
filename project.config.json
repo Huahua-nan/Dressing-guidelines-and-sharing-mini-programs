@@ -13,6 +13,7 @@
     "nodeModules": false,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
+    "cloudfunctionRoot": "cloudfunctions/",
     "scopeDataCheck": false,
     "uglifyFileName": false,
     "checkInvalidKey": true,

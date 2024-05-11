@@ -1,0 +1,54 @@
+/* pages/managepost/managepost.wxss */
+.container{
+  background-color: rgb(218, 218, 218);
+}
+.item{
+  height: 180rpx;
+  width: 90%;
+  background-color: white;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.avatarid{
+  width: 300rpx;
+  height: 100rpx;
+  position: relative;
+}
+.avatar{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+.gender{
+  margin-left: 210rpx;
+  position: absolute;
+  font-size: 16px;
+  top: 80rpx;
+}
+.type{
+  position:absolute;
+  bottom: 60rpx;
+  width: 200px; /* 根据需要设置合适的宽度 */
+  white-space: nowrap; /* 防止文本换行 */
+  margin-left: 220rpx;
+  overflow: hidden; /* 超出部分隐藏 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+}
+.classify{
+  top: 47rpx;
+  position: absolute;
+  right: 140rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.delete{
+  top: 40rpx;
+  position: absolute;
+  right: 10rpx;
+  width: 90rpx;
+  height: 90rpx;
+}

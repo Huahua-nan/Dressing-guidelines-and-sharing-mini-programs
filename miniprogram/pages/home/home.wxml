@@ -50,6 +50,20 @@
 	</view>
 </view>
 
+<view class="container">
+  <view class="dropdown" bindtap="showTypeActionSheet">
+    <text>{{uploadtype || '选择类型'}} {{uploadtypeinfo}}</text>
+  </view>
+  <view class="dropdown" bindtap="showGenderActionSheet">
+    <text>{{uploadgender || '选择性别'}}</text>
+  </view>
+  <view class="upload">
+  <image src="cloud://yueda-0g7hp5b16ff067e6.7975-yueda-0g7hp5b16ff067e6-1306185940/上传.png" bind:tap="upload" class="uploadimage"></image>
+  </view>
+
+</view>
+
+
 <!-- <view class="banner">
   <swiper class="swip_main" indicator-dots="true" autoplay="true" interval="6000"  circular="true">
     <block wx:for="{{mglist}}" wx:key="id">
@@ -60,22 +74,28 @@
   </swiper>
 </view> -->
 <view class="adviser" >
-  <block wx:for="{{adviserbg}}" wx:key="id" class="block1">
-    <image src="{{item.adviser}}" mode="widthFix" class="adviserbg" style="border-radius: 50rpx"></image>
-  </block>
-  <button bindtap="Gotoweather" class="btn" style="width: 150rpx; height: 150rpx; margin-left: 310rpx;text-align: center;">生成</button>
+  <view class="switch" >
+  <image src="cloud://yueda-0g7hp5b16ff067e6.7975-yueda-0g7hp5b16ff067e6-1306185940/切换.png" class="switchimage" bind:tap="showswitchActionSheet"></image>
+ <image wx:if="{{switch==='个人穿搭'}}" src="cloud://yueda-0g7hp5b16ff067e6.7975-yueda-0g7hp5b16ff067e6-1306185940/icon/修改.png" class="switchimage" bind:tap="modify"></image>
+  </view>
+  <!-- <block wx:for="{{adviserbg}}" wx:key="id" class="block1"> -->
+    <image src="{{adviserbg}}" mode="widthFix" class="adviserbg" style="border-radius: 50rpx"></image>
+  <!-- </block> -->
+    <image src="https://7975-yueda-0g7hp5b16ff067e6-1306185940.tcb.qcloud.la/cloudbase-cms/upload/2024-03-25/m2gck5o30qbqeyl33alrhszswc6b7jmg_.png" bindtap="random" class="btn" style="width: 150rpx; height: 150rpx; margin-left: 310rpx;text-align: center;"></image>
   <view class="clothes">
-    
+    <image src="{{a}}" class="guagua"></image>
   </view>
   <view class="clothes2">
-    
+    <image src="{{b}}" class="guagua"></image>
   </view>
   <view class="clothes3">
-    
+    <image src="{{c}}" class="guagua"></image>
   </view>
   <view class="clothes4">
-    
+    <image src="{{d}}" class="guagua"></image>
   </view>
 </view>
 <!-- <navigator url="../../pages/weather/weather" open-type="switchTab">导航到weather</navigator> -->
+
+<!-- 悬浮窗显示上传衣服的种类 -->
 

@@ -1,10 +1,60 @@
 {
   "setting": {
-    "compileHotReLoad": true
+    "compileHotReLoad": true,
+    "urlCheck": true
   },
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "pages/personaladviser/personaladviser",
+          "pathName": "pages/personaladviser/personaladviser",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/managepost/managepost",
+          "pathName": "pages/managepost/managepost",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/history/history",
+          "pathName": "pages/history/history",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/userinfo/userinfo",
+          "pathName": "pages/userinfo/userinfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/post/post",
+          "pathName": "pages/post/post",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "pages/person/person",
           "pathName": "pages/person/person",

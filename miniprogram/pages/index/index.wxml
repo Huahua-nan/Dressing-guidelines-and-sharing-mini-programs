@@ -1,0 +1,47 @@
+<view class="page">
+  <!-- <view class="list">
+    <block wx:for="{{list}}" wx:key="list">
+      <view class="item">
+        <view class="content">
+          <view class="item-img">
+            <image src="{{item.img}}" mode="widthFix" class="img" />
+          </view>
+          <view class="name">
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view> -->
+  <view>
+    <view class="leftList" id="leftList">
+      <block wx:for="{{leftList}}" wx:key="list">
+        <view class="item">
+          <view class="content">
+            <view class="item-img">
+              <image src="{{item.img}}" mode="widthFix" class="img" />
+            </view>
+            <view class="name">
+              {{item.name}}
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="rightList" id="rightList">
+      <block wx:for="{{rightList}}" wx:key="list">
+        <view class="item">
+          <view class="content">
+            <view class="item-img">
+              <image src="{{item.img}}" mode="widthFix" class="img" />
+            </view>
+            <view class="name">
+              {{item.name}}
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="clear-float"></view>
+  </view>
+</view>

@@ -3,34 +3,60 @@
     "pages/home/home",
     "pages/share/share",
     "pages/person/person",
-    "pages/weather/weather"
+    "pages/weather/weather",
+    "pages/index/index",
+    "pages/post/post",
+    "pages/test/test",
+    "pages/userinfo/userinfo",
+    "pages/detail/detail",
+    "pages/collect/collect",
+    "pages/history/history",
+    "pages/managepost/managepost",
+    "pages/personaladviser/personaladviser"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#d9e9e7",
-    "navigationBarTitleText": "悦搭智能建议穿搭系统", 
+    "navigationBarTitleText": "悦搭智能建议穿搭系统",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
-  "tabBar":{
+  "tabBar": {
     "color": "#111111",
     "selectedColor": "#90a391",
-    "list":[
-        {"pagePath": "pages/home/home","text":"主页","iconPath": "/pages/img/主页.png","selectedIconPath": "/pages/img/主页_2.png"},
-        {"pagePath": "pages/share/share","text":"分享","iconPath": "/pages/img/帖子.png","selectedIconPath": "/pages/img/帖子_2.png"},
-        {"pagePath": "pages/person/person","text":"个人","iconPath": "/pages/img/个人.png","selectedIconPath": "/pages/img/个人_2.png"}
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "/pages/img/主页.png",
+        "selectedIconPath": "/pages/img/主页_2.png"
+      },
+      {
+        "pagePath": "pages/share/share",
+        "text": "分享",
+        "iconPath": "/pages/img/帖子.png",
+        "selectedIconPath": "/pages/img/帖子_2.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人",
+        "iconPath": "/pages/img/个人.png",
+        "selectedIconPath": "/pages/img/个人_2.png"
+      }
     ]
-},
+  },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
+  "cloud": true,
   "lazyCodeLoading": "requiredComponents",
   "requiredPrivateInfos": [
-    "getLocation"
+    "getLocation",
+    "chooseLocation"
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "允许微信小程序获取用户的信息"
+      "desc": "获取您的用户信息以提供个性化服务"
     }
   }
 }

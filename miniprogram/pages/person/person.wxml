@@ -1,4 +1,42 @@
-<view class="log">
+<!-- <view class="log">
   <text class="id"></text>
 </view>
-<my-test max="9"></my-test>
+<my-test max="9"></my-test> -->
+<!-- <view class="head">
+
+</view> -->
+<import src="../template/template" />
+
+<view class="container">
+<!--背景图片区域-->
+  <view class="bgcImage">
+  <!--用户信息区域-->
+    <view class="userinfo">
+      <!-- 头像区域 -->
+      <view class="avatar"><!--上右下左-->
+        <button  bind:tap="onChooseAvatar"  class="button"><!--style="width: 200rpx;height: 150rpx;"-->
+          <image class="avatarimage" src="{{avatarUrl}}"></image>  <!--style="width: 140rpx;height: 140rpx;margin: 5 5 5 5;padding: 1rpx 1rpx 10rpx 1rpx;"-->
+        </button> 
+      </view>
+      <!-- 文本区域 -->
+      <view class="id">
+        <textarea class="weui-input" placeholder="登录" placeholder-class="placeholder" bind:tap="onInputNickname" style="margin-top: 10rpx;" value="{{name}}"></textarea>
+      </view>
+    </view>
+
+    <!-- 身高、体重Dialog -->
+    <view class="module">
+      <block wx:for="{{userInfoBar}}" wx:key="index">
+        <template is="userInfo_item" data="{{item}}">
+        </template>
+      </block>
+    </view>
+  </view>
+  <!--帖子浏览、帖子收藏、帖子管理-->
+  <view class="modulemore">
+    <block wx:for="{{list}}" wx:key="index">
+      <template is="navigate_item" data="{{item, right:'../img/right.png'}}"></template>
+    </block>
+  </view>
+</view>
+

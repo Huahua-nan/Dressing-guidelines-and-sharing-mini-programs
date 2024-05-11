@@ -1,0 +1,26 @@
+/* pages/userinfo/userinfo.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.text{
+  margin-bottom: 10rpx;
+}
+.input{
+  height: 60rpx;
+  border: 3rpx solid grey;
+  border-radius: 10rpx;
+}
+.button{
+  display: flex;
+  justify-content: space-around;
+}
+.submit{
+  background-color: green;
+  color: white;
+}
+.cancel{
+  background-color: gray;
+  color: white;
+}

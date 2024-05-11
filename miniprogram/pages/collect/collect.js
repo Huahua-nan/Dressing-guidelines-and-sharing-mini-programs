@@ -184,19 +184,6 @@ Page({
     console.log(currentItem)
     // 从 currentItem 中获取需要的字段值
     const { comment, title, avatar, openid, id,Createtime,Updatetime,commentid,iscollected} = currentItem;
-    //存入浏览记录
-    db.collection('Posthistory').add({
-      data:{
-        openid: openid,
-        Postid: id,
-        commentid: commentid
-      },success: res => {
-        console.log('浏览记录保存成功', res);
-      },
-      fail: err => {
-        console.error('浏览记录保存失败', err);
-      }
-    })
     // 跳转到新页面，并传递数据
     wx.navigateTo({
       url: '../detail/detail?id=' + id + '&photo=' + currentItem.photo + '&comment=' + comment + '&title=' + title + '&postavatar=' + avatar + '&openid=' + openid + '&Createtime=' + Createtime + '&Updatetime=' + Updatetime+'&commentid='+commentid +'&iscollected=' + iscollected,
@@ -210,11 +197,12 @@ Page({
       nomore: false // 重置没有更多数据的标志
     });
     getMockData({ page: 0, pagesize: this.data.pagesize }).then((res) => {
+      const filteredList = res.filter(item => item.iscollected === true);
       this.setData({
-        list: res
-      })
-      this.setList(res)
-    })
+        list: filteredList
+      });
+      this.setList(filteredList);
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

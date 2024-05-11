@@ -1,0 +1,18 @@
+<!--pages/managepost/managepost.wxml-->
+<view class="container">
+  <block wx:for="{{List}}" wx:key="_id">
+    <view class="item" data-item="{{item}}">
+      <view class="avatarid">
+        <image src="{{avatar}}" class="avatar"></image>
+        <text class="id">{{id}}</text>
+      </view>
+      <view class="title">
+        <text>{{item.title}}</text>
+      </view>
+      <image class="classify" src="cloud://yueda-0g7hp5b16ff067e6.7975-yueda-0g7hp5b16ff067e6-1306185940/icon/修改.png" bind:tap="classify" data-item="{{item}}">
+      </image>
+      <image class="delete" src="cloud://yueda-0g7hp5b16ff067e6.7975-yueda-0g7hp5b16ff067e6-1306185940/icon/删除.png" bind:tap="delete" data-item="{{item}}">
+      </image>
+    </view>
+  </block>
+</view>

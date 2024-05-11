@@ -18,7 +18,7 @@ Page({
     // username:'zs'
     commentList:[],
     page:0,
-    pagesize:10,
+    pagesize:1000,
     total:0,
     list: [],
     leftList: [],
@@ -34,6 +34,7 @@ Page({
     Updatetime:'',
     iscollected:'',
     nomore:false,// 是否没有更多数据的标志
+    History:[],//浏览过的帖子的_id
     // userinfo:{},
     // avatar:'',
     // hasUserInfo: false,
@@ -44,95 +45,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // this.getcolors()
-    // this.getComments(),
     //获取虚拟数据
-    this.getLatestData()
-    // getMockData().then((res) => {
-    //   this.setData({
-    //     list: res
-    //   })
-    //   //console.log(res)
-    //   //将虚拟数据填到小程序leftlist和rightlist中
-    //   this.setList(res)
-    // })
-    // if(this.getuserprofile){
-    //   this.setData({
-    //     canIUseGetUserProfile:true
-    //   })
-    // }
+    this.getHistory(this.getLatestData);
   },
-  // newGetInfo: function (e) {
-  //   var that=this
-  //   wx.getUserProfile({
-  //     desc: '正在获取', //不写不弹提示框
-  //     success: function (res) {
-  //       console.log("获取成功:", res)
-  //       that.setData({
-  //         nickname:res.userInfo.nickName,
-  //         avatar:res.userInfo.avatarUrl
-  //       })
-  //     },
-  //     fail: function (err) {
-  //       console.log("获取失败: ", err)
-  //     }
-  //   })
-  // },
-  // getuserprofile(){
-  //   wx.getUserProfile({
-  //     desc: '获取信息',
-  //     success:res=>{
-  //       hasUserInfo:true
-  //       console.log(res.userInfo)
-  //       this.setData({
-  //         userinfo:res.userinfo,
-          
-  //       })
-  //     },
-      
-  //   })
-  // },
-  // db.collection('todos')
-  // .where({
-  //   _openid: 'xxx', // 填入当前用户 openid
-  // })
-  // .skip(10) // 跳过结果集中的前 10 条，从第 11 条开始返回
-  // .limit(10) // 限制返回数量为 10 条
-  // .get()
-  // .then(res => {
-  //   console.log(res.data)
-  // })
-  // .catch(err => {
-  //   console.error(err)
-  // })
-  // getcolors(){//获取颜色
-  //   db.collection('color').where({color:db.command.neq(null)}).get({
-  //     success:res=>{
-  //       console.log("获取颜色数据成功",res)
-  //       // const firstColor = res.data[0].colour;
-  //       this.setData({
-  //         colorList:res.data
-  //       }),
-  //       console.log(this.data.colorList)
-  //     },fail(err){
-  //       console.error('获取颜色数据失败', err)
-  //   }
-  //   })
-  // },
-  //获取评论数据
-  
-  // getComments(){
-  //   db.collection('comment').limit(this.data.pagesize).skip(this.data.page).where({_updateTime:_.gte(1709782738493)}).get({
-  //     success:res=>{
-  //       console.log(res)
-  //       this.setData({
-  //         list:res.data,
-  //         total:res.data.length
-  //       })
-        
-  //     }
-  //   })
-  // },
+
   setList: async function (newList) {
     for (let i in newList) {
       await this.setItem(newList[i])
@@ -170,12 +86,7 @@ Page({
       })
     })
   },
-  //添加帖子的悬浮按钮
-  handleFloatButtonClick(){
-    wx.navigateTo({
-      url: '../post/post',
-    })
-  },
+
   //点击item将帖子item的值传到detail页面详细查看
   Detail(event){
     // 获取当前点击的 item 数据
@@ -184,22 +95,27 @@ Page({
     console.log(currentItem)
     // 从 currentItem 中获取需要的字段值
     const { comment, title, avatar, openid, id,Createtime,Updatetime,commentid,iscollected} = currentItem;
-    //存入浏览记录
-    db.collection('Posthistory').add({
-      data:{
-        openid: openid,
-        Postid: id,
-        commentid: commentid
-      },success: res => {
-        console.log('浏览记录保存成功', res);
-      },
-      fail: err => {
-        console.error('浏览记录保存失败', err);
-      }
-    })
     // 跳转到新页面，并传递数据
     wx.navigateTo({
       url: '../detail/detail?id=' + id + '&photo=' + currentItem.photo + '&comment=' + comment + '&title=' + title + '&postavatar=' + avatar + '&openid=' + openid + '&Createtime=' + Createtime + '&Updatetime=' + Updatetime+'&commentid='+commentid +'&iscollected=' + iscollected,
+    });
+  },
+  getHistory(callback) {
+    this.data.openid = wx.getStorageSync('openid')
+    db.collection('Posthistory').where({openid: this.data.openid}).get({
+      success: res => {
+        const commentIds = res.data.map(item => item.commentid);
+        this.setData({
+          History: commentIds
+        });
+        // 调用回调函数，传递获取到的 History 数据
+        if (typeof callback === 'function') {
+          callback();
+        }
+      },
+      fail: err => {
+        console.error('获取浏览记录失败', err);
+      }
     });
   },
   // 获取最新数据（前 10 条）
@@ -210,11 +126,15 @@ Page({
       nomore: false // 重置没有更多数据的标志
     });
     getMockData({ page: 0, pagesize: this.data.pagesize }).then((res) => {
+      const History = this.data.History; // 获取 History 数组
+      const filteredList = res.filter(item => History.includes(item.commentid));
+      // 这样就会过滤出所有 commentid 包含在 History 中的数据
+      console.log('过滤后的数据:', filteredList);
       this.setData({
-        list: res
-      })
-      this.setList(res)
-    })
+        list: filteredList
+      });
+      this.setList(filteredList);
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

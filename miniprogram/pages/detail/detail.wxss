@@ -1,0 +1,141 @@
+/* pages/detail/detail.wxss */
+.container{
+  height: 1000rpx;
+  width: 100%;
+}
+.swiper{
+  height: 600rpx;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  
+}
+.swiper-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+.title{
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 40rpx;
+  margin-left: 20rpx;
+}
+.comment{
+  line-height: 40rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+.time{
+  margin-left: 20rpx;
+  font-size: 14px;
+  color: #6b6b6b;
+  margin-bottom: 20rpx;
+}
+.divider{
+  height: 0.1px;
+  width: 95%;
+  background-color: #afafaf;
+  margin: 0 auto; /* 可根据需要调整上下间距 */
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+.Comment{
+  margin-left: 20rpx;
+  font-size: 14px;
+}
+.List{
+  margin:10rpx 20rpx;
+  margin-bottom: 180rpx;
+}
+.item{
+  display: flex;
+  border-bottom: 0.1px solid rgb(180, 180, 180);
+  padding-bottom: 20rpx;
+  margin-bottom: 10rpx;
+}
+.haha{
+  display: flex;
+  flex-direction: column;
+}
+.userid{
+  color: grey;
+  font-size: 14px;
+}
+.review{
+  margin-top: 10rpx;
+}
+/* 样式文件中定义遮罩和输入框的样式 */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+}
+.input-container {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx; /* 输入框高度 */
+  background-color: #fff; /* 输入框背景色 */
+}
+
+.input {
+  width: calc(100% - 20rpx); /* 输入框宽度 */
+  display: flex;
+  height: 80rpx; /* 输入框高度 */
+  margin: 10rpx; /* 输入框与容器边距 */
+  border: 1px solid #6b6b6b;
+  border-radius: 20rpx;
+}
+.send-button{
+  width: 100rpx;
+  height: 80rpx;
+  margin: 10rpx; 
+  border-radius: 20rpx;
+}
+/* 评论组件样式 */
+.bottom-bar {
+  position: fixed;
+  bottom: 50rpx;
+  left: 40rpx;
+  width: 85%;
+  height: 100rpx; /* 底部栏高度 */
+  background-color: #f8f8f8; /* 底部栏背景色 */
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  padding: 0 20rpx; /* 左右边距 */
+}
+
+.avatar {
+  width: 60rpx; /* 头像宽度 */
+  height: 60rpx; /* 头像高度 */
+  border-radius: 50%; /* 圆形头像 */
+  margin-right: 20rpx; /* 头像与输入框间距 */
+}
+
+.commentinput {
+  flex: 1; /* 填充剩余空间 */
+  height: 60rpx; /* 输入框高度 */
+  line-height: 60rpx; /* 垂直居中 */
+  border: 1rpx solid #ccc; /* 边框 */
+  border-radius: 10rpx; /* 圆角 */
+  padding: 0 20rpx; /* 左右内边距 */
+  background-color: #fff; /* 输入框背景色 */
+}
+.collect{
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+}

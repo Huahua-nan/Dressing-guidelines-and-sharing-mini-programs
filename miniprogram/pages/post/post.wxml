@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="title">
+    <textarea class="titletextarea" placeholder="请填写标题" placeholder-class="placeholderStyle" maxlength="30" bindinput="Gettitle" value="{{title}}"></textarea>
+  </view>
+  
+  <view class="square">
+    <textarea class="squaretextarea" placeholder="请填写内容" placeholder-class="placeholderStyle" maxlength="600" bindinput="Getcontent">
+      <text class="currentWordNumber" style="margin-left: 80%;position: absolute;bottom: 0;">{{currentWordNumber}}/{{max}}</text>
+      <text class="leastneed" style="margin-left: 40%;color: red;position:absolute;bottom: 0;"><!--{{texts}}{{num}}{{textss}}--></text>
+    </textarea>
+  </view>
+  
+<view class="picture_view">
+  <image src="{{defaultImage}}" class="default-image" bindtap="chooseMedia"></image>
+  <block wx:for="{{tempFiles}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+    <image wx:if="{{item !== defaultImage}}" src="{{item}}" class="image-item" bindtap="TappreviewImage" data-src="{{item}}" bindlongpress="deleteImage" data-index="{{index}}"></image>
+  </block>
+</view>
+
+  <view class="button">
+    <button style="background-color: green;width: 280rpx;margin-right: 40rpx;color: white;" bind:tap="submitPost" disabled="{{submitting}}">提交</button>
+    <button style="background-color: grey;width: 280rpx;color: white;">取消</button>
+  </view>
+
+
+
+</view>

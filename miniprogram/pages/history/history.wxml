@@ -12,7 +12,6 @@
   }
 <!-- </wxs> wx:if="{{item._id==='2da1518365e936fb0122680878d78188'}}" -->
 <view class="page">
-  <image class="float-button" bindtap="handleFloatButtonClick" src="https://7975-yueda-0g7hp5b16ff067e6-1306185940.tcb.qcloud.la/cloudbase-cms/upload/2024-03-17/b4wxiukuajvw3exmenppwkymkiaghfir_.png"></image>
   <view class="leftList" id="leftList" >
     <block wx:for="{{leftList}}" wx:key="list" >
       <view class="item" data-item="{{item}}" bind:tap="Detail">
