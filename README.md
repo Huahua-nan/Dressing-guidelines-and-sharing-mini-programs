@@ -12,5 +12,5 @@ Tips：由于开发小程序时使用了云开发存储，现在已过期未续�
 - [云开发CMS如何进入旧版本](https://mp.weixin.qq.com/s?__biz=MzA4MDAxNzcyMg==&mid=2247487650&idx=1&sn=01686db2e874f0ae6e339913ca56f00f&chksm=9fabf0f7a8dc79e1c9b084d3811b8e5e48c288722214273c353c78cd5932d8df5f350584b3da&mpshare=1&scene=23&srcid=02297TqGzHxmtwBou4uXgHtp&sharer_shareinfo=430d852854035f46eadf194b87f9cab6&sharer_shareinfo_first=430d852854035f46eadf194b87f9cab6#rd)
 
 # Dressing-guidelines-and-sharing-mini-programs
-Dressing guidelines and sharing mini-programs
+穿搭指南与分享小程序Dressing guidelines and sharing mini-programs
 
